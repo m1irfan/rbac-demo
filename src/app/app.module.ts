@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component'; // Import HttpClientModule
 import { AuthInterceptor, AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { ProductsComponent } from './products/products.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ProductsComponent } from './products/products.component';
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    ProductsComponent
+    ProductsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

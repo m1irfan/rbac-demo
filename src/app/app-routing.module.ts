@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { IsAuthenticatedGuard } from './guard/isauthenticated.guard';
 import { ProductsComponent } from './products/products.component';
 import { HasRoleGuard } from './guard/has-role.guard';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
 
@@ -18,7 +19,9 @@ const routes: Routes = [
     data:{
       role:'ROLE_ADMIN',
     }
-  }
+  },
+  
+  {path:'home', component:HomeComponent, canActivate:[IsAuthenticatedGuard]}
     
 
 ];

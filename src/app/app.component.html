@@ -1,7 +1,13 @@
 <nav>
-  <a routerLink="">Home</a>
+  <a routerLink="/home">Home</a>
   <a routerLink="/login">Login</a>
-  <a routerLink="/products">Products</a>
+  <a *ngIf="authService.isLoggedIn$ | async" routerLink="/products">Products</a>
+  <span
+    *ngIf="authService.isLoggedIn$"
+    (click)="authService.logout()"
+    style="margin-left: 10px"
+    >Logout</span
+  >
 </nav>
 
 <router-outlet></router-outlet>

@@ -48,4 +48,9 @@ export class AuthService {
   private getUser(token:string):Usermodel{
     return JSON.parse(atob(token.split('.')[1])) as Usermodel;
   }
+
+  public logout(){
+    localStorage.removeItem('token');
+    this.router.navigate(['login']);
+  }
 }
