@@ -14,7 +14,7 @@ export const HasRoleGuard: CanActivateFn = (route, state) => {
 
   if (!isAuthorized) {
     window.alert('You are not authorized');
-    return router.createUrlTree(['login']); // Redirect to unauthorized page or login
+    return router.createUrlTree(['home']); // Redirect to unauthorized page or login
   }
 
   return true; // Allow navigation if authorized

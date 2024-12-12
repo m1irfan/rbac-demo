@@ -1,12 +1,15 @@
 <nav>
-  <a routerLink="/home">Home</a>
+  <a *ngIf="authService.isLoggedIn$ | async" routerLink="/home">Home</a>
+  <a *ngIf="authService.isLoggedIn$ | async" routerLink="/dashboard"
+    >Dashboard</a
+  >
   <a routerLink="/login">Login</a>
   <a *ngIf="authService.isLoggedIn$ | async" routerLink="/products">Products</a>
-  <span
-    *ngIf="authService.isLoggedIn$"
+  <a
+    *ngIf="authService.isLoggedIn$ | async"
     (click)="authService.logout()"
     style="margin-left: 10px"
-    >Logout</span
+    >Logout</a
   >
 </nav>
 
